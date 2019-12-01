@@ -25,6 +25,7 @@ namespace UserMaintenance
             //lblFirstName.Text = Resource1.FirstName;
             btnAdd.Text = Resource1.Add;
             btnSave.Text = Resource1.Felirat;
+            btnDelete.Text = Resource1.Delete;
 
             listUsers.DataSource = users;
             listUsers.ValueMember = "ID";
@@ -80,9 +81,9 @@ namespace UserMaintenance
         {
             List<User> userek = new List<User>();
 
-            foreach (User item in listBox1.Items)
+            foreach (User item in listUsers.Items)
             {
-                if (item.FullName != textBox1.Text)
+                if (item.FullName != listUsers.Text)
                 {
                     userek.Add(item);
                 }
