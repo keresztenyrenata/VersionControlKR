@@ -69,5 +69,26 @@ namespace UserMaintenance
 
             Application.Exit();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            List<User> userlista = userssajat();
+        
+            listUsers.DataSource = userlista;
+        }
+        public List<User> userssajat()
+        {
+            List<User> userek = new List<User>();
+
+            foreach (User item in listBox1.Items)
+            {
+                if (item.FullName != textBox1.Text)
+                {
+                    userek.Add(item);
+                }
+            }
+
+            return userek;
+        }
     }
 }
